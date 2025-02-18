@@ -1,10 +1,18 @@
 {
   "version": 2,
-  "outputDirectory": "dist",
+  "builds": [
+    {
+      "src": "dist/src/index.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/src/index.js"
+      "dest": "/index.js"
     }
-  ]
+  ],
+  "env": {
+    "PORT": "4000"
+  }
 }
