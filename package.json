@@ -4,8 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/index.ts",
-    "dev": "nodemon src/index.ts",
+    "build": "tsc -b",
+    "start": "node dist/src/index.js",
+    "dev": "npm run build && npm run start",
     "db:generate": "drizzle-kit generate --schema db/schema.ts --dialect postgresql --out ./drizzle",
     "db:migrate": "tsx ./scripts/migrate.ts",
     "db:studio": "drizzle-kit studio"
